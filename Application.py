@@ -1,5 +1,6 @@
 import os
 
+from cliente import Cliente
 ####### FUNÇÕES GLOBAIS
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -25,13 +26,23 @@ def menu():
 
 ####### FUNÇÕES DO SISTEMA
 def cadastro_clientes():
+
     nome = input("Nome: ")
+    codigo_cliente = int(input("Código dokm cliente: "))
     ano_nascimento = int(input("Ano de nascimento: "))
     email = input("E-mail: ")
 
+    cliente1 = Cliente(codigo_cliente,nome,ano_nascimento,email)
+
+
+    print("Cliente cadastrado com sucesso!")
+    print(cliente1)
+
+
 def cadastro_veiculos():
     modelo = input("Nome: ")
-    ano = int(input("Ano: "))
+    codigo_veiculo = int(input("Código do veículo: "))
+    ano = int(input("Ano: ")) 
     cor = input("Cor: ")
 
 
