@@ -1,6 +1,9 @@
 import os
 
 from cliente import Cliente
+
+from veiculo import Veiculo
+
 ####### FUNÇÕES GLOBAIS
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -24,7 +27,12 @@ def menu():
     print("3 - Alugar Carro")
     print("4 - Sair do Sistema")
 
+####### VARIAVEIS GLOBAIS
+lista_clientes = []
+lista_veiculos = []
+
 ####### FUNÇÕES DO SISTEMA
+
 def cadastro_clientes():
 
     nome = input("Nome: ")
@@ -32,18 +40,20 @@ def cadastro_clientes():
     ano_nascimento = int(input("Ano de nascimento: "))
     email = input("E-mail: ")
 
-    cliente1 = Cliente(codigo_cliente,nome,ano_nascimento,email)
-
-
+    cliente = Cliente(codigo_cliente,nome,ano_nascimento,email)
+    lista_clientes.append(cliente)
     print("Cliente cadastrado com sucesso!")
-    print(cliente1)
-
+    
 
 def cadastro_veiculos():
-    modelo = input("Nome: ")
     codigo_veiculo = int(input("Código do veículo: "))
+    modelo = input("Modelo: ")
     ano = int(input("Ano: ")) 
     cor = input("Cor: ")
+
+    veiculo = Veiculo(codigo_veiculo,modelo,ano,cor)
+
+    lista_veiculos.append(veiculo)
 
 
 while True:
