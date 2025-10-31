@@ -6,3 +6,4 @@ class Veiculo:
     modelo: str
     ano: int
     cor: str
+    preco: float
