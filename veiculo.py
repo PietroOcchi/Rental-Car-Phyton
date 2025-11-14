@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Veiculo:
-    codigo_veiculo: int
+    codigo: int
     modelo: str
     ano: int
     cor: str
