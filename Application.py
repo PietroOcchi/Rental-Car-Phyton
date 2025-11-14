@@ -1,14 +1,14 @@
 import os
 
-import cliente_service
+import service.cliente_service as cliente_service
 
-import veiculo_service
+import service.veiculo_service as veiculo_service
 
-from cliente import Cliente
+from model.cliente import Cliente
 
-from veiculo import Veiculo
+from model.veiculo import Veiculo
 
-import layout 
+import service.layout_service as layout_service 
 
 ####### VARIÁVEIS GLOBAIS
 
@@ -16,43 +16,43 @@ import layout
    # execução do sistema
 while True:
 
-    layout.limpar_tela()
-    layout.titulo()
-    layout.menu()
+    layout_service.limpar_tela()
+    layout_service.titulo()
+    layout_service.menu()
 
     opcao=int(input("\nInforme uma opção: "))
 
     match opcao:
         case 1:
-            layout.titulo()
+            layout_service.titulo()
             print("\n#### CADASTRO DE CLIENTES ####")
             cadastro_clientes()
 
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
 
         case 2:
-            layout.titulo()
+            layout_service.titulo()
             lista_clientes()
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
 
         case 3:
-            layout.titulo()
+            layout_service.titulo()
             print("\n#CADASTRO DE VEÍCULOS")
             cadastro_veiculos()   
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
         
         case 4: 
-            layout.titulo()
+            layout_service.titulo()
             lista_veiculos()
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
 
         case 5:
             print("\n#ALUGAR CARRO")
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
 
         case 6:
             print("\n#SAIR")
             
         case _:
             print("\n#OPÇÃO INVÁLIDA")
-            layout.pressione_continuar()
+            layout_service.pressione_continuar()
